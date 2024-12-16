@@ -31,7 +31,19 @@ In this lab we have a look (just a look) at two technologies: [Apache Kafka](htt
     - then run the agent-based microservice - the main class is: `thermostat.LaunchSmartThermostat`
       - this is based on maven dependencies + local jars included in `lib` folder
       - cannot be run using Maven only (pom file to be fixed)
-       
+  - By changing the current (simulated) temperature of the room and/or the user preferred temperature, the smart-thermostat reacts and pro-actively pursues the task of achieving the preferred temperature, by heating or cooling the room.  
+    - To change the current temperature of the room: 
+
+      `
+      POST http://localhost:8080/actions/setTemperature { "value": 24 }
+      `
+    - To change the user preferred temperarture:
+ 
+      ` 
+      PUT  http://localhost:8082/api/preferred-temperature { "user-pref-temperature": 21 }
+      `
+
+
 
 	
    
