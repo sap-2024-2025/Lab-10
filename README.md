@@ -1,6 +1,6 @@
 #### Software Architecture and Platforms - a.y. 2024-2025
 
-## Lab #10-20241213 
+## Lab #10-20241213 (+addendum on 20241216)
 
 In this lab we have a look (just a look) at two technologies: [Apache Kafka](https://kafka.apache.org/), as main example of middleware for Event-Driven Microservices and Architectures, and  [JaCaMo](https://jacamo-lang.github.io/), as main example of research platform for programming agents and multi-agent systems, based on the BDI (Belief-Desire-Intention) architecture on the agent side, the A&A (Agents and Artifacts) on the environment side, and Moise on the organisation side.
 
@@ -22,3 +22,16 @@ In this lab we have a look (just a look) at two technologies: [Apache Kafka](htt
     - in particular: AOP and MAP tutorial
   - [Getting Started](https://jacamo-lang.github.io/getting-started)
   - [Playground on GitPod](https://gitpod.io/#https://github.com/jacamo-lang/template)
+
+- **Microservices+agents integration** -- the repo contains a simple example related to the smart-room case study (see previous labs), in which a simple smart thermostat is implemented using agent technologies and microservices. In particular:
+  - the smart-thermostat agent is implemented in Jason, and integrated inside a Java-based microservice designed using hexagonal/clear architecture using CArtAgO artifacts for bridging domain layer and infrastructure layer;     
+  - a room-controller microservice is provided, simulating the room to be controlled, providing a REST API to control a HVAC.
+  - To run the example:
+    - first run the room-controller - the main class is: `room_controller.LaunchRoomControllerService`
+    - then run the agent-based microservice - the main class is: `thermostat.LaunchSmartThermostat`
+      - this is based on maven dependencies + local jars included in `lib` folder
+      - cannot be run using Maven only (pom file to be fixed)
+       
+
+	
+   

@@ -1,0 +1,10 @@
+MAS test {
+
+    environment: jaca.CartagoEnvironment
+        
+    agents:  
+
+   	thermostat_agent agentArchClass jaca.CAgentArch;
+	
+	aslSourcePath: "src/main/java/thermostat/domain";
+}
